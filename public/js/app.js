@@ -1,6 +1,6 @@
 // const geocode = require('./utils/geocode')
 // const forecast = require('./utils/forecast')
-console.log('Client side javascript is loaded')
+
 
 
 const weatherForm = document.querySelector('form')
