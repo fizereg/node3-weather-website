@@ -7,6 +7,7 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const messageThree = document.querySelector('#message-3')
 
 
 
@@ -14,6 +15,7 @@ const messageTwo = document.querySelector('#message-2')
         e.preventDefault()
         messageOne.textContent = 'Loading...'
         messageTwo.textContent = ''
+        messageThree.textContent= ''
         const location = search.value
         fetch('/weather?address='+location).then((response)=>{
             response.json().then((data)=>{
@@ -23,6 +25,7 @@ const messageTwo = document.querySelector('#message-2')
                 } else {
                     messageOne.textContent = 'Location: ' + data.location
                     messageTwo.textContent = 'Forecast: ' + data.forecast
+                    messageThree.textContent = 'Humidty: ' + data.humidity
                     
                 
             }
